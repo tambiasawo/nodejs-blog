@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 const Post = () => {
   const { id } = useParams();
 
-  const { post, loading, error } = usePost(id as string);
+  const { post, } = usePost(id as string);
 
   return (
     <div>
