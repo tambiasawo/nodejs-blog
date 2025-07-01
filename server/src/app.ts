@@ -1,5 +1,4 @@
 /* import express from "express";
-import cors from "cors";
 import path from "path";
 import cookieParser from "cookie-parser";
 
@@ -24,6 +23,7 @@ export default app;
 import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 import version1API from "./routes/versions/v1/api";
 
@@ -42,6 +42,12 @@ app.use("/v1", version1API);
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
+app.use(
+  cors({
+    origin: "https://nodejs-blog-1-i9ga.onrender.com/",
+    credentials: true,
+  })
+);
 app.use("/*any", (req, res) => {
   //route that doenst match our provided routes
   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
