@@ -67,15 +67,22 @@ const Home = () => {
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search..."
         />
+        {searchError && <p style={{ color: "red" }}>{searchError}</p>}
       </section>
 
       <section className="posts">
-        {displayedPosts.map((post) => (
-          <div className="post" key={post._id}>
-            <Link to={`/posts/${post._id}`}>{post.title}</Link>
-            <span>{new Date(post.updatedAt).toDateString()}</span>
-          </div>
-        ))}
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          displayedPosts.map((post) => (
+            <div className="post" key={post._id}>
+              <Link to={`/posts/${post._id}`}>{post.title}</Link>
+              <span>{new Date(post.updatedAt).toDateString()}</span>
+            </div>
+          ))
+        )}
       </section>
     </div>
   );

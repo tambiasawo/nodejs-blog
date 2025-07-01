@@ -21,7 +21,6 @@ export const getAllPosts = async (req: Request, res: any) => {
 };
 
 export const getPost = async (req: Request, res: any) => {
-
   try {
     const id = req.params.id;
     const objectId = new mongoose.Types.ObjectId(id);
@@ -63,11 +62,7 @@ export const addPost = async (req: Request, res: any, next: NextFunction) => {
   }
 };
 
-export const findPost = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const findPost = async (req: Request, res: any, next: NextFunction) => {
   const { searchTerm } = req.body;
   if (!searchTerm) {
     return res

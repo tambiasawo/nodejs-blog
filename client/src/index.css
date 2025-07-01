@@ -100,7 +100,9 @@ a:visited,
 a:active {
   color: black !important;
 }
-
+div.post a:hover {
+  color: #7e7e7e !important;
+}
 section.posts-header > .heading {
   display: flex;
   width: 100%;

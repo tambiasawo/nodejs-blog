@@ -42,7 +42,7 @@ export const signInController = async (req: Request, res: any, next: any) => {
   const { email, password } = req.body;
 
   try {
-    const validUser = await UserModel.findOne({ email });
+    const validUser: any = await UserModel.findOne({ email });
     if (!validUser) {
       return res.status(404).json({
         message: "Incorrect credentials",
@@ -60,7 +60,7 @@ export const signInController = async (req: Request, res: any, next: any) => {
         success: false,
       });
     } else {
-      const { password, _id, ...rest } = validUser._doc;
+      const { password, _id, ...rest }: any = validUser._doc as any;
 
       const token = jwt.sign(
         { id: validUser._id },
@@ -92,7 +92,7 @@ export const currentUserController = async (
     if (!token) return res.status(401).json({ error: "Not logged in" });
 
     const payload = verify(token, process.env.PRIVATE_KEY!) as { id: string };
-    const user = await UserModel.findById(payload.id);
+    const user: any = await UserModel.findById(payload.id);
 
     const { _id, password, __v, ...rest } = user?._doc as any;
     return res.json({ user: rest });

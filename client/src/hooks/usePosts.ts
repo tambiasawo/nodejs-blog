@@ -10,7 +10,7 @@ const usePosts = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<null | string>(null);
-  const [total, setTotal] = useState();
+  const [, setTotal] = useState();
 
   const getPosts = useCallback(async () => {
     setLoading(true);
