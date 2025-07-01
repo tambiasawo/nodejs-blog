@@ -14,8 +14,9 @@ app.use(express.static("../public")); // set the dir of our public folder
 app.use(cors({ origin: "http://localhost:5143/v1" })); //our frontend endpoint
 
 app.use("/v1", version1API);
-/* app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "index.html"));
+//app.use(express.static(path.resolve(__dirname, "../../client/dist")));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../client/dist/index.html"));
 });
- */
+
 export default app;
