@@ -28,6 +28,7 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
+    
   ],
   "rewrites": [
     {
