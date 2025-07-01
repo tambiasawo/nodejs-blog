@@ -39,7 +39,6 @@ app.use("/v1", version1API);
 
 // 3) Serve the client’s production build
 //    (run `cd client && npm run build` first)
-const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.use(
