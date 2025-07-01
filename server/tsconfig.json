@@ -1,27 +1,14 @@
 {
   "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
     "rootDir": "src",
     "outDir": "dist",
-
-    /* Language & Emit Targets */
-    // "target": "comm", // modern JS
-    "module": "commonjs", // emit native ESM
-    "moduleResolution": "node", // look in node_modules
-    "esModuleInterop": true, // allow default imports from CJS
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Strictness */
-    "strict": true, // all strict checks
-    "skipLibCheck": true, // speed up type checking
-
-    /* Enable source maps for easier debugging */
-    "sourceMap": true,
-
-    /* Type roots */
-    "types": ["node"]
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
