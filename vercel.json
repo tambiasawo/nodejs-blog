@@ -4,19 +4,17 @@
     {
       "src": "client/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "config": { "distDir": "dist" }
     },
     {
-      "src": "server/dist/server.js",
+      "src": "server/src/server.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/v1/(.*)",
-      "dest": "server/dist/server.js"
+      "dest": "server/src/server.ts"
     },
     {
       "handle": "filesystem"
