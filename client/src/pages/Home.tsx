@@ -9,7 +9,6 @@ const Home = () => {
   const { user } = useAuth();
   const [searchValue, setSearchValue] = useState("");
   const [searchError, setSearchError] = useState<null | string>(null);
-
   const { posts, loading, error, refresh } = usePosts();
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 

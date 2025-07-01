@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-const URL = "/v1";
+const URL = "v1";
 type Post = {
   title: string;
   body: string;
@@ -17,9 +17,12 @@ const usePost = (id: string) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${URL}/posts/${id}`, {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BASE}/${URL}/posts/${id}`,
+        {
+          credentials: "include",
+        }
+      );
       if (!response.ok) {
         throw new Error(
           `Fetch failed: ${response.status} ${response.statusText}`
