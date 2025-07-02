@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-const URL = "v1";
+
 export type Post = {
   title: string;
   body: string;
