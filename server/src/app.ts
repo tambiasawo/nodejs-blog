@@ -34,13 +34,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 2) Mount your API
-app.use("/v1", version1API);
-
-// 3) Serve the client’s production build
-//    (run `cd client && npm run build` first)
-app.use(express.static(path.join(__dirname, "../client/dist")));
-
+app.options(
+  "/v1/*",
+  cors({ origin: "https://nodejs-blog-1-i9ga.onrender.com", credentials: true })
+);
 app.use(
   "/v1",
   cors({
@@ -49,6 +46,11 @@ app.use(
   }),
   version1API
 );
+
+// 3) Serve the client’s production build
+//    (run `cd client && npm run build` first)
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
 app.use("/*any", (req, res) => {
   //route that doenst match our provided routes
   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
