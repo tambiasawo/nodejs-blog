@@ -12,10 +12,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* app.options(
-  "/v1/*",
+app.options(
+  "/v1",
   cors({ origin: "https://nodejs-blog-1-i9ga.onrender.com", credentials: true })
-); */
+);
 app.use(
   "/v1",
   cors({
