@@ -16,9 +16,7 @@ const usePosts = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_BASE}/${URL}/posts`
-      );
+      const response = await fetch(`${import.meta.env.VITE_API_BASE}/v1/posts`);
       const posts = await response.json();
       setPosts(posts.posts);
       setTotal(posts.count);

@@ -42,10 +42,12 @@ app.use("/v1", version1API);
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.use(
+  "/v1",
   cors({
-    origin: "https://nodejs-blog-1-i9ga.onrender.com/",
+    origin: "https://nodejs-blog-1-i9ga.onrender.com",
     credentials: true,
-  })
+  }),
+  version1API
 );
 app.use("/*any", (req, res) => {
   //route that doenst match our provided routes
