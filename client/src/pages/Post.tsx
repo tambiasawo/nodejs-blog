@@ -23,7 +23,7 @@ const Post = () => {
    */
   return (
     <div>
-      <h3>{post?.title}</h3>
+      <h2 style={{ textAlign: "center" }}>{post?.title}</h2>
       <article
         className="readable"
         dangerouslySetInnerHTML={{ __html: post?.body || "" }}

@@ -61,7 +61,7 @@ const Home = () => {
 
       <section className="posts-header">
         <div className="heading">
-          <h3>Latest Posts</h3>
+          <h3 style={{ textAlign: "center" }}>Latest Posts</h3>
           {user && <NewPostDialog onPostCreated={refresh} />}
         </div>
         <input
