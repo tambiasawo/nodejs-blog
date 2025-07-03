@@ -88,13 +88,13 @@ const Home = () => {
           ))
         )}
       </section>
-      {/* <Button
+      <Button
         variant="contained"
         onClick={() => setLimitPosts((prev) => (prev === 20 ? 5 : 20))}
         sx={{ borderRadius: "10px" }}
       >
         See More
-      </Button> */}
+      </Button>
     </div>
   );
 };

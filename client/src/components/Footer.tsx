@@ -8,7 +8,9 @@ export default function Footer() {
         paddingTop: "15px",
       }}
     >
-      © {new Date().getFullYear()} Tambi’s Blog • Built with ❤️ and Node
+      © {new Date().getFullYear()} Built by{" "}
+      <a href="https://linkedin.com/in/asawot">Tambi</a> • Built with ❤️ and
+      Node
     </footer>
   );
 }
