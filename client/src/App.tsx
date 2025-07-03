@@ -43,7 +43,7 @@ function App() {
         <nav>
           <h1>
             <Link to="/" style={{ textDecoration: "none" }}>
-              NodeJS Blog
+              NodeStars
             </Link>
           </h1>
           <section className="links">

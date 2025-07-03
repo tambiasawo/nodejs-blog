@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NewPostDialog from "../components/NewPostDialog";
 import { searchPost } from "../action";
 import useAuth from "../authContext";
+import Button from "@mui/material/Button";
 
 const Home = () => {
   const { user } = useAuth();
@@ -11,6 +12,7 @@ const Home = () => {
   const [searchError, setSearchError] = useState<null | string>(null);
   const { posts, loading, error, refresh } = usePosts();
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
+  const [limitPosts, setLimitPosts] = useState(5);
 
   const fetchSearchedItems = useCallback(
     async (val: string) => {
@@ -36,7 +38,7 @@ const Home = () => {
     },
     [] // no dependencies, stable reference
   );
-
+  console.log({ limitPosts });
   useEffect(() => {
     fetchSearchedItems(searchValue);
   }, [searchValue, fetchSearchedItems]);
@@ -49,9 +51,12 @@ const Home = () => {
   return (
     <div className="home">
       <section className="intro">
-        <h1>Hi, I am Tambi</h1>
-        <p>Web developer and startup founder</p>
-        <img src="/hero-image.webp" alt="tambi blog" />
+        <h1>Hi, we are NodeStars</h1>
+        <p>
+          Web developers on a mission to help the next generation of fullstack
+          developers
+        </p>
+        <img src="/node.png" alt="tambi blog" />
       </section>
 
       <section className="posts-header">
@@ -75,7 +80,7 @@ const Home = () => {
         ) : error ? (
           <p>{error}</p>
         ) : (
-          displayedPosts.map((post) => (
+          displayedPosts.slice(0, limitPosts).map((post) => (
             <div className="post" key={post._id}>
               <Link to={`/posts/${post._id}`}>{post.title}</Link>
               <span>{new Date(post.updatedAt).toDateString()}</span>
@@ -83,6 +88,13 @@ const Home = () => {
           ))
         )}
       </section>
+      {/* <Button
+        variant="contained"
+        onClick={() => setLimitPosts((prev) => (prev === 20 ? 5 : 20))}
+        sx={{ borderRadius: "10px" }}
+      >
+        See More
+      </Button> */}
     </div>
   );
 };

@@ -154,6 +154,55 @@ form button:hover {
   cursor: pointer;
 }
 
+div.profile {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+style > .about-section {
+  background: #f9fafe;
+  color: #333;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  padding: 4rem 1rem;
+}
+
+.about-section .hero h3 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-section .hero p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.about-section .intro {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.about-section .intro ul {
+  list-style: disc inside;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.about-section .intro li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.about-section .mission p {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.about-section .mission p:last-child {
+  font-weight: 500;
+}
+
 @media screen and (max-width: 670px) {
   section.intro img {
     width: 100%;
