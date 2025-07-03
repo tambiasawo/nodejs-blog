@@ -21,7 +21,8 @@
   margin-bottom: 1.25em;
 }
 
-code {
+code,
+code pre {
   font-family: Menlo, monospace;
   font-size: 14px;
   background: #f6f8fa;
