@@ -93,7 +93,7 @@ const Home = () => {
         onClick={() => setLimitPosts((prev) => (prev === 20 ? 5 : 20))}
         sx={{ borderRadius: "10px" }}
       >
-        See More
+        {limitPosts < 6 ? "See More" : "See Less"}
       </Button>
     </div>
   );

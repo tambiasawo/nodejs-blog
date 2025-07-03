@@ -21,6 +21,9 @@
   margin-bottom: 1.25em;
 }
 
-.readable p:first-child {
-  text-indent: 1.5em; /* classic paragraph indent */
+code {
+  font-family: Menlo, monospace;
+  background: #f6f8fa;
+  padding: 0.15em 0.3em;
+  border-radius: 4px;
 }

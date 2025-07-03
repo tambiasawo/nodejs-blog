@@ -18,18 +18,17 @@ const Post = () => {
   const { post } = usePost(id as string);
   const [paras, setParas] = React.useState<string[]>([]);
 
-  React.useEffect(() => {
+  /*  React.useEffect(() => {
     if (post?.body) setParas(makeParagraphs(post.body as string, 80));
   }, [post]);
-  
+   */
   return (
     <div>
       <h3>{post?.title}</h3>
-      <article className="readable">
-        {paras.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
-      </article>{" "}
+      <article
+        className="readable"
+        dangerouslySetInnerHTML={{ __html: post?.body || "" }}
+      ></article>
     </div>
   );
 };
