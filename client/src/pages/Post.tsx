@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "../post.css";
 
 const makeParagraphs = (text: string, wordsPerPara = 100) => {
-  const words = text.split(" ");
+  const words = text?.split(" ");
   const paras = [];
   for (let i = 0; i < words.length; i += wordsPerPara) {
     paras.push(words.slice(i, i + wordsPerPara).join(" "));
