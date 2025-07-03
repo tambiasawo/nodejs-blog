@@ -76,7 +76,12 @@ function App() {
                   }}
                 >
                   <MenuItem onClick={handleClose}>
-                    <Link to="/profile">Profile</Link>
+                    <Link
+                      to="/profile"
+                      style={{ textDecoration: "none", color: "#000" }}
+                    >
+                      Profile
+                    </Link>
                   </MenuItem>
                   <MenuItem onClick={handleSignOut}>Logout</MenuItem>
                 </Menu>
